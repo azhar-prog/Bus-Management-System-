@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Payment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #99ccff);
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px 5px 0 0;
+            text-align: center;
+        }
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .step {
+            text-align: center;
+            flex: 1;
+            color: #666;
+        }
+        .step i {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .step.active {
+            color: #333;
+        }
+        .content {
+            padding: 20px;
+        }
+        .payment-methods {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .payment-method {
+            width: 48%;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .payment-method:hover {
+            transform: translateY(-5px);
+        }
+        .payment-method i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+        .payment-method h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+        .payment-method p {
+            text-align: center;
+            color: #666;
+        }
+        .payment-method button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .payment-method button:hover {
+            background-color: #0056b3;
+        }
+        .order-summary {
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        .order-summary h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .order-summary table {
+            width: 100%;
+        }
+        .order-summary th, .order-summary td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .order-summary th {
+            background-color: #f4f4f4;
+        }
+        .order-summary .total {
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+        .order-summary .total span {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Bus Ticket Payment</h2>
+        </div>
+        <div class="steps">
+            <div class="step active">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
+            </div>
+            <div class="step">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Address</span>
+            </div>
+            <div class="step">
+                <i class="far fa-credit-card"></i>
+                <span>Payment</span>
+            </div>
+        </div>
+        <div class="content">
+            <h3>Payment Method</h3>
+            <div class="payment-methods">
+                <div class="payment-method card-payment" onclick="selectPaymentMethod('Card')">
+                    <i class="far fa-credit-card"></i>
+                    <h3>Card Payment</h3>
+                    <p>Pay securely using your credit or debit card.</p>
+                    <button>Choose Card Payment</button>
+                </div>
+                <div class="payment-method online-payment" onclick="selectPaymentMethod('Online')">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Online Payment</h3>
+                    <p>Pay conveniently using online payment methods.</p>
+                    <button>Choose Online Payment</button>
+                </div>
+            </div>
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                    </tr>
+                    <tr>
+                        <td>Bus Ticket</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" class="total">Total (INR)</td>
+                        <td class="total"><span>500</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectPaymentMethod(method) {
+            const paymentMethods = document.querySelectorAll('.payment-method');
+            paymentMethods.forEach(pm => pm.classList.remove('selected'));
+            if (method === 'Card') {
+                document.querySelector('.card-payment').classList.add('selected');
+            } else {
+                document.querySelector('.online-payment').classList.add('selected');
+            }
+            // You can add logic to proceed to the next step here
+        }
+    </script>
+</body>
+</html>

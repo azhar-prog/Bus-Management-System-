@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Scheduling System - Refund Issue</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #007bff, #ffffff); /* Gradient background from blue to white */
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .container {
+      width: 100%;
+      max-width: 500px;
+      margin: 50px auto;
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333333; /* Dark blue text */
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #cccccc; /* Light gray border */
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff; /* Blue button */
+      color: #ffffff; /* White text */
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Refund Issue</h2>
+    <form action="#" method="post">
+      <label for="bookingID">Booking ID:</label>
+      <input type="text" id="bookingID" name="bookingID" placeholder="Enter Booking ID" required>
+
+      <label for="reason">Reason for Refund:</label>
+      <textarea id="reason" name="reason" rows="4" placeholder="Enter reason for refund" required></textarea>
+
+      <input type="submit" value="Submit Refund Request">
+    </form>
+  </div>
+
+</body>
+</html>

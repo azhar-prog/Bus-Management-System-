@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Scheduling System - Ticket Booking</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #007bff, #ffffff); /* Gradient background from blue to white */
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .container {
+      width: 100%;
+      max-width: 500px;
+      margin: 50px auto;
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333333; /* Dark blue text */
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"], select, input[type="date"], input[type="time"], input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #cccccc; /* Light gray border */
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+   .bookt-icket-button{
+    width:100px;
+    padding:10px;
+    background-color:#007bff;
+    color:#ffffff;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+    transition:background-color 0.3s;
+}
+   .book-ticket-button:hover{
+    background-color:#0056b3;
+}
+   .book-ticket-button a{
+    text-decoration:none;
+    color:white;
+}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Bus Ticket Booking</h2>
+    <form action="#" method="post">
+      <label for="passengerName">Passenger Name:</label>
+      <input type="text" id="passengerName" name="passengerName" placeholder="Enter Passenger Name" required>
+
+      <label for="date">Date of Travel:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="departureTime">Departure Time:</label>
+      <input type="time" id="departureTime" name="departureTime" required>
+
+      <label for="destination">Destination:</label>
+      <select id="destination" name="destination" required>
+        <option value="" disabled selected>Select Destination</option>
+        <option value="New York">New York</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Chicago">Chicago</option>
+        <!-- Add more destination options as needed -->
+      </select>
+
+      <label for="busNumber">Bus Number:</label>
+      <input type="text" id="busNumber" name="busNumber" placeholder="Enter Bus Number" required>
+
+      <label for="seats">Number of Seats:</label>
+      <input type="number" id="seats" name="seats" min="1" required>
+
+      <button class="book-ticket-button"><a href="pay.html">Book Ticket </a></button>  </div>
+
+</body>
+</html>
